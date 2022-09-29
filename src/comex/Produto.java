@@ -2,6 +2,7 @@ package comex;
 
 public class Produto {
 	
+	private static long proximoId = 1;
 	
 	protected long id;
 	protected String nome;
@@ -12,16 +13,48 @@ public class Produto {
 	
 	
 	
-	public Produto(long id, String nome, String descricao, double precoUnitario, int quantidadeEstoque,
+	public Produto(String nome, String descricao, double precoUnitario, int quantidadeEstoque,
 			Categoria categoria) {
+		
 		super();
-		this.id = id;
+		this.id = proximoId;
 		this.nome = nome;
 		this.descricao = descricao;
 		this.precoUnitario = precoUnitario;
 		this.quantidadeEstoque = quantidadeEstoque;
 		this.categoria = categoria;
+		proximoId++;
 		
+		
+		if  (this.id <= 0) {
+            throw new IllegalArgumentException("Id do produto inválido");
+        } 
+		
+		if (nome == null) {
+			throw new IllegalArgumentException("O nome do produto não pode ser nulo"); 
+		}
+				
+		if (nome.isEmpty()) {
+            throw new IllegalArgumentException("O nome do produto é obrigatório");
+		}
+		
+		if (nome.length() <= 5) {
+			throw new IllegalArgumentException("O tamanho do nome do produto deve ser maior do que 5 caracteres");
+		}
+		
+		if  (this.precoUnitario <= 0) {
+            throw new IllegalArgumentException("O preço deve ser maior que zero");
+        }
+		
+		if (quantidadeEstoque <= 0) {
+	           throw new IllegalArgumentException("O produto em estoque deve ser maior do que Zero");
+		   }
+		
+		if (categoria == null) {
+	           throw new IllegalArgumentException("É obrigatório inserir a categoria");
+		   }
+		
+			
 		
 	}
 	public long getId() {
