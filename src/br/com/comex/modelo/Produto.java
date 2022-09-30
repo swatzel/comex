@@ -11,8 +11,6 @@ public class Produto {
 	protected int quantidadeEstoque;
 	protected Categoria categoria;
 	
-	
-	
 	public Produto(String nome, String descricao, double precoUnitario, int quantidadeEstoque,
 			Categoria categoria) {
 		

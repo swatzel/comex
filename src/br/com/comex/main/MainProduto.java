@@ -10,7 +10,7 @@ public class MainProduto {
 	public static void main(String[] args) {
 		
 		try {
-		
+					
 		Categoria categoria1 = new Categoria("INFORMÁTICA", StatusCategoria.ATIVA);
 			
 		Categoria categoria2 = new Categoria("MÓVEIS", StatusCategoria.INATIVA);

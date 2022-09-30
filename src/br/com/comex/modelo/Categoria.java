@@ -41,8 +41,7 @@ public class Categoria {
    		
 	}
 	
-  	
-		
+  			
 	public long getId() {
 		return id;
 	}

@@ -9,6 +9,7 @@ public class MainCategoria {
 		
 		try {
 			
+			
 		Categoria categoria1 = new Categoria("INFORMÁTICA", StatusCategoria.ATIVA);
 		System.out.println("Categoria " + categoria1.getNome() + " (" + categoria1.getId() + " - " + categoria1.getStatus() + ")");
 		
