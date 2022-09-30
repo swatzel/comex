@@ -7,4 +7,5 @@ public enum StatusCategoria {
 	public static StatusCategoria status;
 
 
+	
 }
