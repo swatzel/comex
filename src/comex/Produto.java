@@ -27,7 +27,7 @@ public class Produto {
 		
 		
 		if  (this.id <= 0) {
-            throw new IllegalArgumentException("Id do produto inválido");
+            throw new IllegalArgumentException("Id do produto não pode ser igual ou menor do que zero");
         } 
 		
 		if (nome == null) {
@@ -39,7 +39,7 @@ public class Produto {
 		}
 		
 		if (nome.length() <= 5) {
-			throw new IllegalArgumentException("O tamanho do nome do produto deve ser maior do que 5 caracteres");
+			throw new IllegalArgumentException("O nome do produto deve conter mais do que 5 caracteres");
 		}
 		
 		if  (this.precoUnitario <= 0) {
@@ -47,7 +47,7 @@ public class Produto {
         }
 		
 		if (quantidadeEstoque <= 0) {
-	           throw new IllegalArgumentException("O produto em estoque deve ser maior do que Zero");
+	           throw new IllegalArgumentException("O produto em estoque deve ser maior do que zero");
 		   }
 		
 		if (categoria == null) {

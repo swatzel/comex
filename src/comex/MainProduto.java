@@ -4,7 +4,8 @@ public class MainProduto {
 
 	public static void main(String[] args) {
 		
-
+		try {
+		
 		Categoria categoria1 = new Categoria("INFORMÁTICA", StatusCategoria.ATIVA);
 			
 		Categoria categoria2 = new Categoria("MÓVEIS", StatusCategoria.INATIVA);
@@ -58,22 +59,33 @@ public class MainProduto {
 	       " (Categoria: " + produtoIsento.getCategoria().getNome() + " - Descrição: " + produtoIsento.getDescricao() + ")" + ". \n Seu preço é R$" + produtoIsento.getPrecoUnitario() +
 	       ". Atenção, em estoque há " + produtoIsento.getQuantidadeEstoque() + " produtos(s).");
 			System.out.println("O valor em estoque atual do " + produto2.getNome() +" é R$" + produto2.getValorEmEstoque());
-			System.out.println("Importante! O valor do imposto do " + produtoIsento.getNome() + " é R$ " + produtoIsento.getCalculaImposto());
+			System.out.println("Importante! Produto isento de imposto " + produtoIsento.getNome() + " - R$ " + produtoIsento.getCalculaImposto());
+			
+			System.out.println("");
+			System.out.println("---------------- \n----------------");
 		
 			
-			//Produto teste 
-		Produto produto4 = new Produto("Livro teste", null, 1000, 0, categoria1);
+			//Produto teste com produto zero em estoque
+		 Produto produto4 = new Produto("Livro teste", null, 100, 0, categoria3);
 				
-				System.out.println("O produto é ID (" + produto4.getId() + ") - " + produto4.getNome() + 
+			System.out.println("O produto é ID (" + produto4.getId() + ") - " + produto4.getNome() + 
 					" (Categoria: " + produto4.getCategoria().getNome() + " - Descrição: " + produto4.getDescricao() +")" + ". \n Seu preço é R$" + produto3.getPrecoUnitario() +
 					". Atenção, em estoque há " + produto4.getQuantidadeEstoque() + " produtos(s).");
-				System.out.println("O valor em estoque atual do " + produto3.getNome() +" é R$" + produto4.getValorEmEstoque());
-				System.out.println("Importante! O valor do imposto do " + produto4.getNome() + " é R$ " + produto4.getCalculaImposto());
+			System.out.println("O valor em estoque atual do " + produto3.getNome() +" é R$" + produto4.getValorEmEstoque());
+			System.out.println("Importante! O valor do imposto do " + produto4.getNome() + " é R$ " + produto4.getCalculaImposto());
 				
-				System.out.println("");
-				System.out.println("---------------- \n----------------");
+			System.out.println("");
+			System.out.println("---------------- \n----------------");
+				
+		} catch (IllegalArgumentException ex) {
+			
+			System.out.println("Erro ao criar o produto: " + ex.getMessage());
+			System.out.println("----------------");
+		}
+			
 		
-
+		    System.out.println("Finalização da Criação de Produto"); 
+			 
 	}
 
 }

@@ -16,28 +16,29 @@ public class Categoria {
 		proximoId++;
 		
 		if  (this.id <= 0) {
-            throw new IllegalArgumentException("Id inválido");
+            throw new IllegalArgumentException("Id não pode ser zero");
         } 
 		
+			
 		if (nome == null) {
-			throw new IllegalArgumentException("O nome do curso é obrigatório"); 
+			throw new IllegalArgumentException("O nome da categoria é obrigatório"); 
 		}
 			
 		
 		if (nome.isEmpty()) {
-            throw new IllegalArgumentException("Nome inválido");
+            throw new IllegalArgumentException("Nome da categoria não pode estar vazio");
 		}
 		
 		if (nome.length() <= 3) {
-			throw new IllegalArgumentException("O tamanho do nome do curso deve ser maior que 3 caracteres");
+			throw new IllegalArgumentException("O tamanho do nome da categoria conter mais do que 3 caracteres");
 		}
 		
 		if (status != StatusCategoria.ATIVA && status != StatusCategoria.INATIVA ) {
 	           throw new IllegalArgumentException("Categoria Inválida");
-		   }
-            
-     	  
 		
+		}
+		         
+   		
 	}
 	
   	
