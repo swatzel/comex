@@ -5,12 +5,14 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import br.com.comex.csv.ConnectionFactory;
+import br.com.comex.modelo.Categoria;
+import br.com.comex.modelo.StatusCategoria;
 
 public class MainInsercaoCategoria {
 
 	public static void main(String[] args) throws SQLException {
 		
-	
+			
 		ConnectionFactory connectionfactory = new ConnectionFactory();
 		try (Connection connection = connectionfactory.recuperarConexao()){
 		
@@ -20,11 +22,12 @@ public class MainInsercaoCategoria {
 		
 			
 		try (PreparedStatement stm = connection.prepareStatement
-					("INSERT INTO COMEX.CATEGORIA (nome, status) VALUES (?, ?)", colunaParaRetornar)
+					("insert into COMEX.CATEGORIA (nome, status) values (?, ?)", colunaParaRetornar)
 			){							
-			adicionarVariavel("INFORMÁTICA", "ATIVA", stm);
-			adicionarVariavel("MÓVEIS", "INATIVA", stm);
-			adicionarVariavel("LIVROS", "ATIVA", stm);
+			adicionarVariavel(new Categoria ("INFORMÁTICA", StatusCategoria.ATIVA), stm);
+			adicionarVariavel (new Categoria("MÓVEIS", StatusCategoria.INATIVA), stm);
+			adicionarVariavel (new Categoria ("LIVROS", StatusCategoria.ATIVA), stm);
+			
 			
 			connection.commit();	
 			
@@ -36,9 +39,9 @@ public class MainInsercaoCategoria {
 	    }
 	  }
 
-	private static void adicionarVariavel(String nome, String status, PreparedStatement stm) throws SQLException {
-		stm.setString(1, nome);
-	    stm.setString(2, status);
+	private static void adicionarVariavel(Categoria categoria, PreparedStatement stm) throws SQLException {
+		stm.setString(1,categoria.getNome());
+	    stm.setString(2, categoria.getStatus().name());
 		stm.execute();
 		
 		
