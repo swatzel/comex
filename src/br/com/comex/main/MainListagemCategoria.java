@@ -14,7 +14,7 @@ public class MainListagemCategoria {
 		ConnectionFactory connectionfactory = new ConnectionFactory();
 		try (Connection connection = connectionfactory.recuperarConexao()){
 		
-		try (PreparedStatement stm = connection.prepareStatement("SELECT ID, NOME, STATUS FROM COMEX.CATEGORIA"))
+		try (PreparedStatement stm = connection.prepareStatement("select * from COMEX.CATEGORIA"))
 		{
 		stm.execute();
 		try (ResultSet rst = stm.getResultSet())
@@ -24,7 +24,7 @@ public class MainListagemCategoria {
 			String nome = rst.getString("nome");
 			String status = rst.getString("status");
 			
-			System.out.println(id + " | " + nome + " | " + status);
+			System.out.println("ID: " + id + " | " + nome + " | " + status);
 		
 			
 	      }
