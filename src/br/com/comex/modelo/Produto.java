@@ -10,9 +10,15 @@ public class Produto {
 	protected double precoUnitario;
 	protected int quantidadeEstoque;
 	protected Categoria categoria;
+	protected ProdutoTributavel produtotributavel;
 	
+	
+	public Produto(long id) {
+		super();
+		this.id = id;
+	}
 	public Produto(String nome, String descricao, double precoUnitario, int quantidadeEstoque,
-			Categoria categoria) {
+			 Categoria categoria, ProdutoTributavel produtotributavel) {
 		
 		super();
 		this.id = proximoId;
@@ -20,7 +26,8 @@ public class Produto {
 		this.descricao = descricao;
 		this.precoUnitario = precoUnitario;
 		this.quantidadeEstoque = quantidadeEstoque;
-		this.categoria = categoria;
+	    this.categoria = categoria;
+	    this.produtotributavel = produtotributavel;
 		proximoId++;
 		
 		
@@ -79,7 +86,7 @@ public class Produto {
 	public void setPrecoUnitario(double precoUnitario) {
 		this.precoUnitario = precoUnitario;
 	}
-	public long getQuantidadeEstoque() {
+	public int getQuantidadeEstoque() {
 		return quantidadeEstoque;
 	}
 	public void setQuantidadeEstoque(int quantidadeEstoque) {
@@ -99,6 +106,24 @@ public class Produto {
 	
 	public double getCalculaImposto(){
 		return this.precoUnitario * 0.4;
+	
+	}
+		
+	public ProdutoTributavel getProdutoTributavel(){
+		return produtotributavel;
+	}
+	
+	public void setProdutoTributavel(ProdutoTributavel produtotributavel) {
+		this.produtotributavel = produtotributavel;
+	
+	}
+	
+	
+	
+	@Override
+	public String toString() {
+		return "Produto [id=" + id + ", nome=" + nome + ", descricao=" + descricao + ", precoUnitario=" + precoUnitario
+				+ ", quantidadeEstoque=" + quantidadeEstoque + ", categoria=" + categoria + ", tipo=" + produtotributavel;
 	}	
 	
 
