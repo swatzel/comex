@@ -3,6 +3,7 @@ package br.com.comex.main;
 import br.com.comex.modelo.Categoria;
 import br.com.comex.modelo.Produto;
 import br.com.comex.modelo.ProdutoIsento;
+import br.com.comex.modelo.ProdutoTributavel;
 import br.com.comex.modelo.StatusCategoria;
 
 public class MainProduto {
@@ -16,9 +17,9 @@ public class MainProduto {
 		Categoria categoria2 = new Categoria("MÓVEIS", StatusCategoria.INATIVA);
 	
 		Categoria categoria3 = new Categoria("LIVROS", StatusCategoria.ATIVA);
-				
+
 		
-		Produto produto1 = new Produto("Notebook Samsung", "BOOK i3 8GB 256GB SSD - Intel® Core™ i3 - 8GB", 3523.00, 1, categoria1);
+		Produto produto1 = new Produto("Notebook Samsung", "BOOK i3 8GB 256GB SSD - Intel® Core™ i3 - 8GB", 3523.00, 1, categoria1, ProdutoTributavel.NAO_ISENTO);
 		
 			System.out.println("O produto é ID (" + produto1.getId() + ") - " + produto1.getNome() + 
 				" (Categoria: " + produto1.getCategoria().getNome()+ " - Descrição: " + produto1.getDescricao() + ")" + ". \n Seu preço é R$" + produto1.getPrecoUnitario() +
@@ -31,7 +32,7 @@ public class MainProduto {
 		
 		
 		
-		Produto produto2 = new Produto("Clean Architecture", "Autor: Robert C. Martin / Ano: 2017 / Edição em Português", 102.90, 2, categoria3);
+		Produto produto2 = new Produto("Clean Architecture", "Autor: Robert C. Martin / Ano: 2017 / Edição em Português", 102.90, 2, categoria3, ProdutoTributavel.NAO_ISENTO);
 		
 			System.out.println("O produto é ID (" + produto2.getId() + ") - " + produto2.getNome() + 
 				" (Categoria: " + produto2.getCategoria().getNome()+ " - Descrição: " + produto2.getDescricao() + ")" + ". \n Seu preço é R$" + produto2.getPrecoUnitario() +
@@ -44,20 +45,20 @@ public class MainProduto {
 		
 				
 		
-		Produto produto3 = new Produto("Monitor Dell 27", "UltraSharp de 27\" com Tela Infinita U2722D", 1889.00, 3, categoria1);
+		Produto produto3 = new Produto("Monitor Dell 27", "UltraSharp de 27\" com Tela Infinita U2722D", 1889.00, 3, categoria1, ProdutoTributavel.NAO_ISENTO);
 		
 			System.out.println("O produto é ID (" + produto3.getId() + ") - " + produto3.getNome() + 
 				" (Categoria: " + produto3.getCategoria().getNome() + " - Descrição: " + produto3.getDescricao() +")" + ". \n Seu preço é R$" + produto3.getPrecoUnitario() +
 				". Atenção, em estoque há " + produto3.getQuantidadeEstoque() + " produtos(s).");
 			System.out.println("O valor em estoque atual do " + produto3.getNome() +" é R$" + produto3.getValorEmEstoque());
-			System.out.println("Importante! O valor do imposto do " + produto3.getNome() + " é R$ " + produto3.getCalculaImposto());
+			System.out.println("Importante! O valor do imposto do " + produto3.getNome() + " é R$ " + produto3.getCalculaImposto() + " |Tributação: " + produto3.getProdutoTributavel());
 			
 			System.out.println("");
 			System.out.println("---------------- \n----------------");
 		
 			
 					
-		ProdutoIsento produtoIsento = new ProdutoIsento("Clean Architecture", "Autor: Robert C. Martin / Ano: 2017 / Edição em Português", 102.90, 2, categoria2);
+		ProdutoIsento produtoIsento = new ProdutoIsento("Clean Architecture", "Autor: Robert C. Martin / Ano: 2017 / Edição em Português", 102.90, 2, categoria2, ProdutoTributavel.ISENTO);
 				
 				
 			System.out.println("O produto é ID (" + produtoIsento.getId() + ") - " + produtoIsento.getNome() + 
@@ -71,7 +72,7 @@ public class MainProduto {
 		
 			
 			//Produto teste com produto zero em estoque
-		 Produto produto4 = new Produto("Livro teste", null, 100, 0, categoria3);
+		 Produto produto4 = new Produto("Livro teste", null, 100, 0, categoria3, ProdutoTributavel.NAO_ISENTO);
 				
 			System.out.println("O produto é ID (" + produto4.getId() + ") - " + produto4.getNome() + 
 					" (Categoria: " + produto4.getCategoria().getNome() + " - Descrição: " + produto4.getDescricao() +")" + ". \n Seu preço é R$" + produto3.getPrecoUnitario() +
