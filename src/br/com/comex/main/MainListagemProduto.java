@@ -19,7 +19,7 @@ public class MainListagemProduto {
 		try (ResultSet rst = stm.getResultSet())
 		{
 		while (rst.next()) {
-			Integer id = rst.getInt("id");
+			Long id = rst.getLong("id");
 			String nome = rst.getString("nome");
 			String descricao = rst.getString("descricao");
 			Integer precoUnitario = rst.getInt("preco_unitario");
