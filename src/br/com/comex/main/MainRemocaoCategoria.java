@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 import br.com.comex.csv.ConnectionFactory;
+import br.com.comex.modelo.StatusCategoria;
 
 public class MainRemocaoCategoria {
 
@@ -14,10 +15,12 @@ public class MainRemocaoCategoria {
 		try (Connection connection = connectionfactory.recuperarConexao()){
 		
 		try (PreparedStatement stm = connection.prepareStatement
-				("DELETE FROM COMEX.CATEGORIA WHERE STATUS = ?")){
-		stm.setString(1, "INATIVA"); 
+				("delete from COMEX.CATEGORIA where status = ?")){
+		
+		stm.setString(1, String.valueOf(StatusCategoria.INATIVA)); 
 		
 		stm.execute();
+		
 		
 		Integer linhasRemovidas = stm.getUpdateCount();
 		
