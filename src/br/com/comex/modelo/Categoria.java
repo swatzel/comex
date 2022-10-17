@@ -7,7 +7,15 @@ public class Categoria {
 	private long id;
 	private String nome;
 	private StatusCategoria status;
-		
+	
+	
+	
+	public Categoria(long id) {
+		super();
+		this.id = id;
+	}
+
+
 	public Categoria(String nome, StatusCategoria status) {
 		
 		this.id = proximoId;
