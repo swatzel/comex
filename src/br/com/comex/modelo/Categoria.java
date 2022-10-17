@@ -15,7 +15,6 @@ public class Categoria {
 	}
 	
 	public Categoria(long id, String nome, StatusCategoria status) {
-		super();
 		this.id = id;
 		this.nome = nome;
 		this.status = status;
@@ -74,6 +73,9 @@ public class Categoria {
 		this.status = status;
 	}
 
-	
+	@Override
+	public String toString() {
+		return "Categoria [Id:" + id + ", Nome:" + nome + ", Status: " + status;
+	}
 	
 }
