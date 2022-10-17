@@ -14,8 +14,10 @@ public class MainAtualizacaoCategoria {
 		
 		
 		try (PreparedStatement stm = connection.prepareStatement
-				("Update COMEX.CATEGORIA set nome = 'LIVROS TÉCNICOS' where nome = 'LIVROS'"))
+				("update COMEX.CATEGORIA set nome = ? where nome = ?"))
 		{
+		stm.setString(1, "LIVROS TÉCNICOS");
+		stm.setString(2, "LIVROS");
 		stm.execute();
 		
 		Integer linhasModificadas = stm.getUpdateCount();
