@@ -22,12 +22,12 @@ public class MainAtualizacaoProduto {
 	}
   }
 
-	private static void alteraProduto(String nome, String descricao, int precoUnitario, int quantidadeEstoque, int categoriaId, String tipo, int id, PreparedStatement stm) throws SQLException {
+	private static void alteraProduto(String nome, String descricao, int precoUnitario, int quantidadeEstoque, long categoriaId, String tipo, int id, PreparedStatement stm) throws SQLException {
 		stm.setString(1, nome);
 		stm.setString(2, descricao);
 		stm.setDouble(3, precoUnitario);
 		stm.setInt(4, quantidadeEstoque);
-		stm.setInt(5, categoriaId);
+		stm.setLong(5, categoriaId);
 		stm.setString(6, tipo);
 		stm.setInt(7, id);
 		
