@@ -17,6 +17,22 @@ public class Produto {
 		super();
 		this.id = id;
 	}
+	 	
+	
+	public Produto(long id, String nome, String descricao, double precoUnitario, int quantidadeEstoque,
+			Categoria categoria, ProdutoTributavel produtotributavel) {
+		super();
+		this.id = id;
+		this.nome = nome;
+		this.descricao = descricao;
+		this.precoUnitario = precoUnitario;
+		this.quantidadeEstoque = quantidadeEstoque;
+		this.categoria = categoria;
+		this.produtotributavel = produtotributavel;
+	}
+
+
+
 	public Produto(String nome, String descricao, double precoUnitario, int quantidadeEstoque,
 			 Categoria categoria, ProdutoTributavel produtotributavel) {
 		
