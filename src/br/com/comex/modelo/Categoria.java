@@ -11,10 +11,15 @@ public class Categoria {
 	
 	
 	public Categoria(long id) {
-		super();
 		this.id = id;
 	}
-
+	
+	public Categoria(long id, String nome, StatusCategoria status) {
+		super();
+		this.id = id;
+		this.nome = nome;
+		this.status = status;
+	}
 
 	public Categoria(String nome, StatusCategoria status) {
 		
