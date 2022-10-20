@@ -4,8 +4,8 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
 
-import br.com.comex.csv.ConnectionFactory;
 import br.com.comex.dao.CategoriaDao;
+import br.com.comex.jdbc.ConnectionFactory;
 import br.com.comex.modelo.Categoria;
 
 public class MainListagemCategoriaDao {

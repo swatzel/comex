@@ -5,7 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import br.com.comex.csv.ConnectionFactory;
+import br.com.comex.jdbc.ConnectionFactory;
 
 public class MainListagemCategoria {
 

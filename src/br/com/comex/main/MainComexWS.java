@@ -15,7 +15,7 @@ public class MainComexWS {
 		
 		Endpoint.publish(url, service);
 		
-
+		
 	}
 
 }

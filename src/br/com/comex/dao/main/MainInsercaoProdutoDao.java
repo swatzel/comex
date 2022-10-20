@@ -3,8 +3,8 @@ package br.com.comex.dao.main;
 import java.sql.Connection;
 import java.sql.SQLException;
 
-import br.com.comex.csv.ConnectionFactory;
 import br.com.comex.dao.ProdutoDao;
+import br.com.comex.jdbc.ConnectionFactory;
 import br.com.comex.modelo.Categoria;
 import br.com.comex.modelo.Produto;
 import br.com.comex.modelo.ProdutoTributavel;

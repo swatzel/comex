@@ -3,7 +3,7 @@ package br.com.comex.main;
 import java.sql.Connection;
 import java.sql.SQLException;
 
-import br.com.comex.csv.ConnectionFactory;
+import br.com.comex.jdbc.ConnectionFactory;
 
 public class MainTestaConexao {
 

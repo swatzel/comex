@@ -1,5 +1,8 @@
 package br.com.comex.modelo;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement
 public class Categoria {
 	
 	private static long proximoId = 1;
@@ -8,13 +11,15 @@ public class Categoria {
 	private String nome;
 	private StatusCategoria status;
 	
-	
+	public Categoria() {
+	}
 	
 	public Categoria(long id) {
 		this.id = id;
 	}
 	
 	public Categoria(long id, String nome, StatusCategoria status) {
+		super();
 		this.id = id;
 		this.nome = nome;
 		this.status = status;
@@ -30,13 +35,11 @@ public class Categoria {
 		if  (this.id <= 0) {
             throw new IllegalArgumentException("Id não pode ser zero");
         } 
-		
-			
+					
 		if (nome == null) {
 			throw new IllegalArgumentException("O nome da categoria é obrigatório"); 
 		}
-			
-		
+				
 		if (nome.isEmpty()) {
             throw new IllegalArgumentException("Nome da categoria não pode estar vazio");
 		}
@@ -49,8 +52,6 @@ public class Categoria {
 	           throw new IllegalArgumentException("Categoria Inválida");
 		
 		}
-		         
-   		
 	}
 	
   			

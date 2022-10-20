@@ -4,7 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-import br.com.comex.csv.ConnectionFactory;
+import br.com.comex.jdbc.ConnectionFactory;
 import br.com.comex.modelo.StatusCategoria;
 
 public class MainRemocaoCategoria {
