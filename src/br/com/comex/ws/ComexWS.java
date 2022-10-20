@@ -28,4 +28,13 @@ public class ComexWS {
 	
 		}
 
+
+ public Categoria adicionarCategoria(Categoria categoria) throws SQLException {
+	
+		System.out.println("Inserindo categoria" + categoria);
+
+		categoriaDao.insere(categoria);
+
+		return categoria;
+		}
 }
