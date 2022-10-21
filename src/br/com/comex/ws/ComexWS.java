@@ -8,8 +8,10 @@ import javax.jws.WebMethod;
 import javax.jws.WebService;
 
 import br.com.comex.dao.CategoriaDao;
+import br.com.comex.dao.ProdutoDao;
 import br.com.comex.jdbc.ConnectionFactory;
 import br.com.comex.modelo.Categoria;
+import br.com.comex.modelo.Produto;
 
 
 @WebService
@@ -17,6 +19,7 @@ public class ComexWS {
 	    
 		Connection criaConexao = new ConnectionFactory().recuperarConexao();
         CategoriaDao categoriaDao = new CategoriaDao(criaConexao);
+        ProdutoDao produtoDao = new ProdutoDao(criaConexao);
         
 @WebMethod(operationName="listarCategorias")	
         public List<Categoria> getCategorias() throws SQLException {
@@ -38,4 +41,13 @@ public class ComexWS {
 
  			return categoria;
 		}
+
+@WebMethod(operationName="listarProdutos")
+		public List<Produto> listarProdutos () throws SQLException {
+	
+		       List<Produto> produtos = produtoDao.listaTodos();
+		       
+		       return produtos; 
+		       
+	}
 }
