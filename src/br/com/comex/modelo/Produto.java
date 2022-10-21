@@ -114,27 +114,25 @@ public class Produto {
 	public void setCategoria(Categoria categoria) {
 		this.categoria = categoria;
 	}
-	
 	public double getValorEmEstoque(){
 		return this.precoUnitario * this.quantidadeEstoque;
-		
 	}
-	
-	public double getCalculaImposto(){
+	public double setValorEmEstoque(){
+		return this.precoUnitario = quantidadeEstoque;
+	}
+		public double getCalculaImposto(){
 		return this.precoUnitario * 0.4;
-	
 	}
-		
-	public ProdutoTributavel getProdutoTributavel(){
+	public double setCalculaImposto() {
+		return setCalculaImposto();
+	}
+		public ProdutoTributavel getProdutoTributavel(){
 		return produtotributavel;
 	}
-	
 	public void setProdutoTributavel(ProdutoTributavel produtotributavel) {
 		this.produtotributavel = produtotributavel;
-	
 	}
-	
-	
+		
 	
 	@Override
 	public String toString() {
