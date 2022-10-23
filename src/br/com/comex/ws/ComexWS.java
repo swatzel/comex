@@ -8,9 +8,11 @@ import javax.jws.WebMethod;
 import javax.jws.WebService;
 
 import br.com.comex.dao.CategoriaDao;
+import br.com.comex.dao.ClienteDao;
 import br.com.comex.dao.ProdutoDao;
 import br.com.comex.jdbc.ConnectionFactory;
 import br.com.comex.modelo.Categoria;
+import br.com.comex.modelo.Cliente;
 import br.com.comex.modelo.Produto;
 
 
@@ -20,6 +22,8 @@ public class ComexWS {
 		Connection criaConexao = new ConnectionFactory().recuperarConexao();
         CategoriaDao categoriaDao = new CategoriaDao(criaConexao);
         ProdutoDao produtoDao = new ProdutoDao(criaConexao);
+        ClienteDao clienteDao = new ClienteDao(criaConexao);
+        
         
 @WebMethod(operationName="listarCategorias")	
         public List<Categoria> getCategorias() throws SQLException {
@@ -42,6 +46,7 @@ public class ComexWS {
  			return categoria;
 		}
 
+
 @WebMethod(operationName="listarProdutos")
 		public List<Produto> listarProdutos () throws SQLException {
 	
@@ -49,5 +54,26 @@ public class ComexWS {
 		       
 		       return produtos; 
 		       
-	}
+	    }
+
+@WebMethod(operationName="listarClientes")	
+public List<Cliente> listarClientes() throws SQLException {
+	
+			List<Cliente> clientes = clienteDao.listaTodos();
+
+			System.out.println(clientes);
+
+		return clientes;
+
+        }
+
+@WebMethod(operationName="adicionarCliente")
+	public Cliente adicionarCliente(Cliente cliente) throws SQLException {
+
+			clienteDao.insere(cliente);
+			
+			System.out.println("Inserindo categoria" + cliente);
+
+		return cliente;
+}
 }

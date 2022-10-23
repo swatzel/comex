@@ -11,7 +11,7 @@ public class MainComexWS {
 		ComexWS service = new ComexWS();
 		String url = "http://localhost:8080/ComexWS";
 		
-		System.err.println("Serviço rodando " + url);
+		System.out.println("Serviço rodando " + url);
 		
 		Endpoint.publish(url, service);
 		
